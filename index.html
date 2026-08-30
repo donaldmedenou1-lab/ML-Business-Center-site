@@ -12,11 +12,10 @@
 </head>
 <body>
     <div id="toast" class="toast" aria-live="polite"></div>
-
     <header class="site-header" id="top">
         <div class="container nav-wrap">
             <a class="brand" href="#accueil" aria-label="ML Business Center">
-                <span class="brand-mark"><img src="images/logo-ml.png" alt="ML"></span>
+                <span class="brand-mark"><img src="logo-ml.png" alt="ML"></span>
                 <span class="brand-name">ML <strong>BUSINESS CENTER</strong></span>
             </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
@@ -31,11 +30,10 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section class="hero" id="accueil">
             <div class="hero-bg">
-                <img src="images/building.jpg" alt="Façade du ML Business Center">
+                <img src="building.jpg" alt="Façade du ML Business Center">
             </div>
             <div class="hero-overlay"></div>
             <div class="container hero-content reveal">
@@ -53,7 +51,6 @@
                 </div>
             </div>
         </section>
-
         <section class="quick-book">
             <div class="container quick-grid">
                 <div>
@@ -77,7 +74,6 @@
                 <button class="btn btn-primary quick-btn" id="quickSearch">Voir les disponibilités</button>
             </div>
         </section>
-
         <section class="section spaces-section" id="espaces">
             <div class="container">
                 <div class="section-heading reveal">
@@ -87,7 +83,6 @@
                     </div>
                     <p>Des espaces pensés pour travailler, décider, former et recevoir dans un cadre professionnel.</p>
                 </div>
-
                 <div class="filter-row reveal">
                     <button class="filter active" data-filter="all">Tous</button>
                     <button class="filter" data-filter="meeting">Réunion</button>
@@ -95,11 +90,9 @@
                     <button class="filter" data-filter="event">Événement</button>
                     <button class="filter" data-filter="training">Formation</button>
                 </div>
-
                 <div class="spaces-grid" id="spacesGrid"></div>
             </div>
         </section>
-
         <section class="reservation-section" id="reservation">
             <div class="container reservation-layout">
                 <div class="reservation-copy reveal">
@@ -112,12 +105,10 @@
                         <div><span>✓</span><p><strong>Flexible</strong><small>Modifiez ou annulez vos réservations.</small></p></div>
                     </div>
                 </div>
-
                 <form class="booking-card reveal" id="bookingForm">
                     <div class="step-head">
                         <div class="step-dot active">1</div><div class="step-line"></div><div class="step-dot">2</div><div class="step-line"></div><div class="step-dot">3</div>
                     </div>
-
                     <div class="form-grid">
                         <div class="form-group full">
                             <label for="spaceSelect">Espace</label>
@@ -167,7 +158,6 @@
                             <textarea id="notes" rows="3" placeholder="Disposition de la salle, matériel..."></textarea>
                         </div>
                     </div>
-
                     <div class="booking-summary">
                         <div><span>Tarif de l'espace</span><strong id="basePrice">0 FCFA</strong></div>
                         <div><span>Options</span><strong id="optionsPrice">0 FCFA</strong></div>
@@ -178,7 +168,6 @@
                 </form>
             </div>
         </section>
-
         <section class="gallery-section section" id="services">
             <div class="container">
                 <div class="section-heading centered reveal">
@@ -186,17 +175,16 @@
                     <h2>Tout est pensé pour<br>vos moments importants.</h2>
                 </div>
                 <div class="mosaic reveal">
-                    <figure class="mosaic-item large"><img src="images/meeting-premium.jpg" alt="Salle de réunion premium"><figcaption>Réunions exécutives</figcaption></figure>
-                    <figure class="mosaic-item"><img src="images/conference.jpg" alt="Salle de conférence"><figcaption>Conférences</figcaption></figure>
-                    <figure class="mosaic-item"><img src="images/banquet.jpg" alt="Espace événementiel"><figcaption>Réceptions</figcaption></figure>
-                    <figure class="mosaic-item wide"><img src="images/coworking.jpg" alt="Espace coworking"><figcaption>Coworking</figcaption></figure>
+                    <figure class="mosaic-item large"><img src="meeting-premium.jpg" alt="Salle de réunion premium"><figcaption>Réunions exécutives</figcaption></figure>
+                    <figure class="mosaic-item"><img src="conference.jpg" alt="Salle de conférence"><figcaption>Conférences</figcaption></figure>
+                    <figure class="mosaic-item"><img src="banquet.jpg" alt="Espace événementiel"><figcaption>Réceptions</figcaption></figure>
+                    <figure class="mosaic-item wide"><img src="coworking.jpg" alt="Espace coworking"><figcaption>Coworking</figcaption></figure>
                 </div>
             </div>
         </section>
-
         <section class="about-section" id="apropos">
             <div class="container about-grid">
-                <div class="about-image reveal"><img src="images/team.jpg" alt="Équipe professionnelle"></div>
+                <div class="about-image reveal"><img src="team.jpg" alt="Équipe professionnelle"></div>
                 <div class="about-content reveal">
                     <span class="eyebrow brown">ML BUSINESS CENTER</span>
                     <h2>Un lieu conçu pour faire avancer les idées.</h2>
@@ -209,7 +197,6 @@
                 </div>
             </div>
         </section>
-
         <section class="reviews section">
             <div class="container">
                 <div class="section-heading centered reveal">
@@ -223,7 +210,6 @@
                 </div>
             </div>
         </section>
-
         <section class="contact-section" id="contact">
             <div class="container contact-card reveal">
                 <div>
@@ -238,7 +224,6 @@
             </div>
         </section>
     </main>
-
     <div class="modal" id="successModal" aria-hidden="true">
         <div class="modal-backdrop" data-close-modal></div>
         <div class="modal-box">
@@ -251,16 +236,14 @@
             <button class="btn btn-primary full-btn" data-close-modal>Terminer</button>
         </div>
     </div>
-
     <footer class="footer">
         <div class="container footer-grid">
-            <div><div class="brand footer-brand"><span class="brand-mark"><img src="images/logo-ml.png" alt="ML"></span><span class="brand-name">ML <strong>BUSINESS CENTER</strong></span></div><p>Réservez. Travaillez. Réussissez.</p></div>
+            <div><div class="brand footer-brand"><span class="brand-mark"><img src="logo-ml.png" alt="ML"></span><span class="brand-name">ML <strong>BUSINESS CENTER</strong></span></div><p>Réservez. Travaillez. Réussissez.</p></div>
             <div><strong>Navigation</strong><a href="#espaces">Espaces</a><a href="#reservation">Réservation</a><a href="#services">Services</a></div>
             <div><strong>Contact</strong><span>Centre d'affaires ML</span><span>Ouvert 7j/7</span><span>contact@mlbusinesscenter.com</span></div>
         </div>
         <div class="footer-bottom"><div class="container">© <span id="year"></span> ML Business Center — Projet démonstration</div></div>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 </html>
