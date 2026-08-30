@@ -1,12 +1,12 @@
 const spaces = [
-    {id:"executive",name:"Salle Executive",type:"meeting",label:"Réunion",capacity:12,price:25000,image:"../images/meeting-premium.jpg",desc:"Une salle élégante pour vos décisions et réunions stratégiques.",features:["Écran 4K","Wi-Fi","Climatisation"]},
-    {id:"conference",name:"Grand Forum",type:"event",label:"Conférence",capacity:50,price:45000,image:"../images/conference.jpg",desc:"Un espace modulable pour conférences, séminaires et présentations.",features:["Projecteur","Sonorisation","50 places"]},
-    {id:"coworking",name:"Open Cowork",type:"coworking",label:"Coworking",capacity:16,price:15000,image:"../images/coworking.jpg",desc:"Un environnement lumineux pour travailler seul ou en équipe.",features:["Wi-Fi","Bureaux","Prises"]},
-    {id:"boardroom",name:"Boardroom",type:"meeting",label:"Réunion",capacity:14,price:30000,image:"../images/boardroom.jpg",desc:"Une salle premium dédiée aux réunions confidentielles.",features:["Écran","Table centrale","Café"]},
-    {id:"training",name:"Lab Formation",type:"training",label:"Formation",capacity:25,price:35000,image:"../images/training-room.jpg",desc:"Une salle équipée pour formations, ateliers et présentations.",features:["Projecteur","Tableaux","25 places"]},
-    {id:"event",name:"Grand Salon",type:"event",label:"Événement",capacity:80,price:55000,image:"../images/event-hall.jpg",desc:"Un grand espace flexible pour vos événements professionnels.",features:["Scène","Éclairage","80 places"]},
-    {id:"workplace",name:"Work Lounge",type:"coworking",label:"Coworking",capacity:20,price:18000,image:"../images/open-space.jpg",desc:"Des postes de travail dans un cadre confortable et professionnel.",features:["Bureaux","Éclairage","Wi-Fi"]},
-    {id:"dining",name:"Business Dining",type:"event",label:"Réception",capacity:30,price:40000,image:"../images/dining-room.jpg",desc:"Une salle chaleureuse pour déjeuners d'affaires et réceptions.",features:["Service","30 places","Écran"]}
+    {id:"executive",name:"Salle Executive",type:"meeting",label:"Réunion",capacity:12,price:25000,image:"meeting-premium.jpg",desc:"Une salle élégante pour vos décisions et réunions stratégiques.",features:["Écran 4K","Wi-Fi","Climatisation"]},
+    {id:"conference",name:"Grand Forum",type:"event",label:"Conférence",capacity:50,price:45000,image:"conference.jpg",desc:"Un espace modulable pour conférences, séminaires et présentations.",features:["Projecteur","Sonorisation","50 places"]},
+    {id:"coworking",name:"Open Cowork",type:"coworking",label:"Coworking",capacity:16,price:15000,image:"coworking.jpg",desc:"Un environnement lumineux pour travailler seul ou en équipe.",features:["Wi-Fi","Bureaux","Prises"]},
+    {id:"boardroom",name:"Boardroom",type:"meeting",label:"Réunion",capacity:14,price:30000,image:"boardroom.jpg",desc:"Une salle premium dédiée aux réunions confidentielles.",features:["Écran","Table centrale","Café"]},
+    {id:"training",name:"Lab Formation",type:"training",label:"Formation",capacity:25,price:35000,image:"training-room.jpg",desc:"Une salle équipée pour formations, ateliers et présentations.",features:["Projecteur","Tableaux","25 places"]},
+    {id:"event",name:"Grand Salon",type:"event",label:"Événement",capacity:80,price:55000,image:"event-hall.jpg",desc:"Un grand espace flexible pour vos événements professionnels.",features:["Scène","Éclairage","80 places"]},
+    {id:"workplace",name:"Work Lounge",type:"coworking",label:"Coworking",capacity:20,price:18000,image:"open-space.jpg",desc:"Des postes de travail dans un cadre confortable et professionnel.",features:["Bureaux","Éclairage","Wi-Fi"]},
+    {id:"dining",name:"Business Dining",type:"event",label:"Réception",capacity:30,price:40000,image:"dining-room.jpg",desc:"Une salle chaleureuse pour déjeuners d'affaires et réceptions.",features:["Service","30 places","Écran"]}
 ];
 
 const money = n => new Intl.NumberFormat("fr-FR").format(n) + " FCFA";
