@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ML Business Center — réservation d'espaces professionnels, salles de réunion, coworking et événements.">
+    <title>ML Business Center — Réservez votre espace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <header class="site-header" id="top">
+        <div class="container nav-wrap">
+            <a class="brand" href="#accueil" aria-label="ML Business Center">
+                <span class="brand-mark"><img src="images/logo-ml.png" alt="ML"></span>
+                <span class="brand-name">ML <strong>BUSINESS CENTER</strong></span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <a href="#accueil">Accueil</a>
+                <a href="#espaces">Espaces</a>
+                <a href="#reservation">Réserver</a>
+                <a href="#services">Services</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact">Contact</a>
+                <button class="nav-cta" data-scroll="#reservation">Réserver maintenant</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+            <div class="hero-bg">
+                <img src="images/building.jpg" alt="Façade du ML Business Center">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content reveal">
+                <span class="eyebrow">ESPACE PROFESSIONNEL • CONFORT • FLEXIBILITÉ</span>
+                <h1>Un espace qui donne<br><em>du poids</em> à vos projets.</h1>
+                <p>Réservez en quelques clics une salle de réunion, un espace de travail ou un lieu pour vos événements.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" data-scroll="#reservation">Réserver un espace <span>→</span></button>
+                    <button class="btn btn-ghost" data-scroll="#espaces">Découvrir les espaces</button>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>12+</strong><span>espaces</span></div>
+                    <div><strong>7j/7</strong><span>disponibilité</span></div>
+                    <div><strong>100%</strong><span>flexible</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-book">
+            <div class="container quick-grid">
+                <div>
+                    <span class="mini-label">TROUVER UN ESPACE</span>
+                    <h2>Votre prochaine réservation</h2>
+                </div>
+                <div class="quick-field">
+                    <label for="quickType">Espace</label>
+                    <select id="quickType">
+                        <option value="all">Tous les espaces</option>
+                        <option value="meeting">Réunion</option>
+                        <option value="coworking">Coworking</option>
+                        <option value="event">Événement</option>
+                        <option value="training">Formation</option>
+                    </select>
+                </div>
+                <div class="quick-field">
+                    <label for="quickDate">Date</label>
+                    <input type="date" id="quickDate">
+                </div>
+                <button class="btn btn-primary quick-btn" id="quickSearch">Voir les disponibilités</button>
+            </div>
+        </section>
+
+        <section class="section spaces-section" id="espaces">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow brown">NOS ESPACES</span>
+                        <h2>Choisissez l'espace<br>qui vous ressemble.</h2>
+                    </div>
+                    <p>Des espaces pensés pour travailler, décider, former et recevoir dans un cadre professionnel.</p>
+                </div>
+
+                <div class="filter-row reveal">
+                    <button class="filter active" data-filter="all">Tous</button>
+                    <button class="filter" data-filter="meeting">Réunion</button>
+                    <button class="filter" data-filter="coworking">Coworking</button>
+                    <button class="filter" data-filter="event">Événement</button>
+                    <button class="filter" data-filter="training">Formation</button>
+                </div>
+
+                <div class="spaces-grid" id="spacesGrid"></div>
+            </div>
+        </section>
+
+        <section class="reservation-section" id="reservation">
+            <div class="container reservation-layout">
+                <div class="reservation-copy reveal">
+                    <span class="eyebrow brown">RÉSERVATION</span>
+                    <h2>Réservez votre espace en toute simplicité.</h2>
+                    <p>Choisissez un espace, votre date, votre créneau et les services dont vous avez besoin. Le récapitulatif se met à jour automatiquement.</p>
+                    <div class="trust-list">
+                        <div><span>✓</span><p><strong>Confirmation immédiate</strong><small>Votre demande est enregistrée instantanément.</small></p></div>
+                        <div><span>✓</span><p><strong>Tarification transparente</strong><small>Aucun calcul caché dans le récapitulatif.</small></p></div>
+                        <div><span>✓</span><p><strong>Flexible</strong><small>Modifiez ou annulez vos réservations.</small></p></div>
+                    </div>
+                </div>
+
+                <form class="booking-card reveal" id="bookingForm">
+                    <div class="step-head">
+                        <div class="step-dot active">1</div><div class="step-line"></div><div class="step-dot">2</div><div class="step-line"></div><div class="step-dot">3</div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label for="spaceSelect">Espace</label>
+                            <select id="spaceSelect" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingDate">Date</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingTime">Créneau</label>
+                            <select id="bookingTime" required>
+                                <option value="08:00">08:00 — 10:00</option>
+                                <option value="10:30">10:30 — 12:30</option>
+                                <option value="13:00">13:00 — 15:00</option>
+                                <option value="15:30">15:30 — 17:30</option>
+                                <option value="18:00">18:00 — 20:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Participants</label>
+                            <input type="number" id="guests" min="1" max="100" value="4" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Nom complet</label>
+                            <input type="text" id="clientName" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email</label>
+                            <input type="email" id="clientEmail" placeholder="vous@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPhone">Téléphone</label>
+                            <input type="tel" id="clientPhone" placeholder="+229 ..." required>
+                        </div>
+                        <div class="form-group full">
+                            <label>Options</label>
+                            <div class="options-grid">
+                                <label class="check-card"><input type="checkbox" value="projector" data-price="5000"><span>Projecteur<small>+ 5 000 FCFA</small></span></label>
+                                <label class="check-card"><input type="checkbox" value="coffee" data-price="3000"><span>Café & eau<small>+ 3 000 FCFA</small></span></label>
+                                <label class="check-card"><input type="checkbox" value="wifi" data-price="2000"><span>Wi-Fi premium<small>+ 2 000 FCFA</small></span></label>
+                                <label class="check-card"><input type="checkbox" value="catering" data-price="10000"><span>Catering<small>+ 10 000 FCFA</small></span></label>
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <label for="notes">Besoin particulier <span>(facultatif)</span></label>
+                            <textarea id="notes" rows="3" placeholder="Disposition de la salle, matériel..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <div><span>Tarif de l'espace</span><strong id="basePrice">0 FCFA</strong></div>
+                        <div><span>Options</span><strong id="optionsPrice">0 FCFA</strong></div>
+                        <div class="summary-total"><span>Total estimé</span><strong id="totalPrice">0 FCFA</strong></div>
+                    </div>
+                    <button class="btn btn-primary full-btn" type="submit">Confirmer la réservation <span>→</span></button>
+                    <p class="secure-note">🔒 Démonstration locale — aucune donnée bancaire n'est demandée.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="gallery-section section" id="services">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <span class="eyebrow brown">SERVICES & AMBIANCE</span>
+                    <h2>Tout est pensé pour<br>vos moments importants.</h2>
+                </div>
+                <div class="mosaic reveal">
+                    <figure class="mosaic-item large"><img src="images/meeting-premium.jpg" alt="Salle de réunion premium"><figcaption>Réunions exécutives</figcaption></figure>
+                    <figure class="mosaic-item"><img src="images/conference.jpg" alt="Salle de conférence"><figcaption>Conférences</figcaption></figure>
+                    <figure class="mosaic-item"><img src="images/banquet.jpg" alt="Espace événementiel"><figcaption>Réceptions</figcaption></figure>
+                    <figure class="mosaic-item wide"><img src="images/coworking.jpg" alt="Espace coworking"><figcaption>Coworking</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="apropos">
+            <div class="container about-grid">
+                <div class="about-image reveal"><img src="images/team.jpg" alt="Équipe professionnelle"></div>
+                <div class="about-content reveal">
+                    <span class="eyebrow brown">ML BUSINESS CENTER</span>
+                    <h2>Un lieu conçu pour faire avancer les idées.</h2>
+                    <p>Réunions stratégiques, formations, journées de travail ou événements : notre centre propose des espaces flexibles et élégants pour chaque moment professionnel.</p>
+                    <div class="about-numbers">
+                        <div><strong>12+</strong><span>espaces disponibles</span></div>
+                        <div><strong>500+</strong><span>personnes accueillies</span></div>
+                        <div><strong>7/7</strong><span>ouvert toute la semaine</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews section">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <span class="eyebrow brown">ILS NOUS FONT CONFIANCE</span>
+                    <h2>Une expérience professionnelle.</h2>
+                </div>
+                <div class="review-grid">
+                    <article class="review reveal"><div class="stars">★★★★★</div><p>« L'espace était impeccable et la réservation très simple. La salle était exactement comme sur les photos. »</p><strong>Sarah K.</strong><span>Direction commerciale</span></article>
+                    <article class="review reveal"><div class="stars">★★★★★</div><p>« Un cadre élégant pour une réunion importante. Le matériel et l'accueil ont fait la différence. »</p><strong>Marc A.</strong><span>Consultant</span></article>
+                    <article class="review reveal"><div class="stars">★★★★★</div><p>« Nous avons organisé une formation de 25 personnes sans aucune difficulté. »</p><strong>David M.</strong><span>Formateur</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container contact-card reveal">
+                <div>
+                    <span class="eyebrow">CONTACT</span>
+                    <h2>Un projet à préparer ?</h2>
+                    <p>Notre équipe est disponible pour vous aider à choisir le meilleur espace.</p>
+                </div>
+                <div class="contact-actions">
+                    <a href="mailto:contact@mlbusinesscenter.com" class="btn btn-light">✉ Nous écrire</a>
+                    <a href="tel:+22900000000" class="btn btn-outline-light">☎ Nous appeler</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="successModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-box">
+            <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+            <div class="success-icon">✓</div>
+            <span class="eyebrow brown">RÉSERVATION ENREGISTRÉE</span>
+            <h2>Votre espace est réservé.</h2>
+            <p id="successText">Votre demande a été enregistrée.</p>
+            <div class="confirmation" id="confirmationDetails"></div>
+            <button class="btn btn-primary full-btn" data-close-modal>Terminer</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div><div class="brand footer-brand"><span class="brand-mark"><img src="images/logo-ml.png" alt="ML"></span><span class="brand-name">ML <strong>BUSINESS CENTER</strong></span></div><p>Réservez. Travaillez. Réussissez.</p></div>
+            <div><strong>Navigation</strong><a href="#espaces">Espaces</a><a href="#reservation">Réservation</a><a href="#services">Services</a></div>
+            <div><strong>Contact</strong><span>Centre d'affaires ML</span><span>Ouvert 7j/7</span><span>contact@mlbusinesscenter.com</span></div>
+        </div>
+        <div class="footer-bottom"><div class="container">© <span id="year"></span> ML Business Center — Projet démonstration</div></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
